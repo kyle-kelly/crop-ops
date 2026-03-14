@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  # 1. The MQTT Broker
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    ports:
+      - "1883:1883" 
+    volumes:
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+    restart: unless-stopped
+
+  # 2. The Python Backend
+  backend:
+    build: ./meshtastic-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      # This bind mount maps your local folder into the container.
+      # It ensures your SQLite database isn't deleted when the container restarts!
+      - ./meshtastic-backend:/app
+    depends_on:
+      - mosquitto
+    restart: unless-stopped
+
+  # 3. The React Frontend
+  frontend:
+    build: ./meshtastic-frontend
+    ports:
+      - "80:80" # Standard HTTP port
+    depends_on:
+      - backend
+    restart: unless-stopped
