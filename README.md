@@ -1,4 +1,4 @@
-# 📡 Meshtastic Private Network Manager
+# 📡 Crop-Ops: A Meshtastic Private Network Manager
 
 A full-stack, real-time web dashboard for managing a closed-loop, private LoRa mesh network. 
 
