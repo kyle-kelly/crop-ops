@@ -26,9 +26,16 @@ The system bridges physical LoRa radio waves with a modern, real-time web applic
 ## ✨ Core Features
 
 * **🗺️ Live Map Tracking & Tooltips:** View the real-time physical location of all approved nodes on an interactive map. Hover over any node to see a live telemetry summary and its last-heard timestamp.
+![Live Map](img/LiveMap)
 * **📍 Stationary Sensor Mapping:** Not all sensors have GPS. Use the embedded Map Picker in the Admin UI to permanently anchor stationary environmental sensors to fixed coordinates on your map.
+![Sensor Status](img/SensorStatus)
+![Sensor Status > Set Location](img/SensorStatus_Location)
 * **💬 Network Messaging:** A two-way chat interface allowing the web dashboard to broadcast text messages directly to field nodes via the LoRa mesh.
+![Network Chat](img/NetworkChat)
 * **⚙️ Strict Device Management:** Gatekeep network access. View all nodes attempting to communicate on the channel, approve/block them, assign them 4-character map labels, and remotely push configuration changes over the airwaves.
+![Device Managment](img/DeviceManagment)
+![Device Managment](img/DeviceManagment_Edit)
+![Device Managment](img/DeviceManagment_Logs)
 
 ---
 
